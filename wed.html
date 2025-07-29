@@ -53,6 +53,30 @@
 
   </div>
   </section>
+  <audio id="bg-music" src="music/Ed Sheeran - Perfect (Official Music Video).mp3" loop autoplay></audio>
+<div id="music-toggle">
+  <i id="music-icon" class="fas fa-volume-up"></i>
+</div>
+
+  <script>
+  const music = document.getElementById('bg-music');
+  const musicIcon = document.getElementById('music-icon');
+  const musicToggle = document.getElementById('music-toggle');
+
+  music.volume = 0.5; // Adjust volume if needed
+
+  musicToggle.addEventListener('click', () => {
+    if (music.paused) {
+      music.play();
+      musicIcon.classList.remove('fa-volume-mute');
+      musicIcon.classList.add('fa-volume-up');
+    } else {
+      music.pause();
+      musicIcon.classList.remove('fa-volume-up');
+      musicIcon.classList.add('fa-volume-mute');
+    }
+  });
+</script>
 
 
 
